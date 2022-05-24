@@ -1,0 +1,126 @@
+<!--<p-panel header="Pesquisar clientes">-->
+<!--  <form-->
+<!--    #pesquisaForm="ngForm"-->
+<!--    (ngSubmit)="pesquisar()"-->
+<!--    class="p-mb-3"-->
+<!--    id="form"-->
+<!--  >-->
+<!--    <div class="p-formgroup p-col-12 p-md-6">-->
+<!--      <div class="p-field p-fluid">-->
+<!--        <label for="nome" aria-hidden="true"> Por Nome </label>-->
+<!--        <input-->
+<!--          id="nome"-->
+<!--          name="nome"-->
+<!--          [(ngModel)]="nome"-->
+<!--          #name="ngModel"-->
+<!--          type="text"-->
+<!--          pInputText-->
+<!--          [attr.aria-describedby]="'Informe o nome do cliente'"-->
+<!--          placeholder="Informe o nome do cliente"-->
+<!--          minlength="3"-->
+<!--          required-->
+<!--        />-->
+<!--        <ng-container *ngIf="name.invalid && (name.dirty || name.touched)">-->
+<!--          <small-->
+<!--            class="p-invalid"-->
+<!--            role="alert"-->
+<!--            tabindex="0"-->
+<!--            *ngIf="name.errors?.required"-->
+<!--          >-->
+<!--            Nome é requerido.-->
+<!--          </small>-->
+<!--          <small-->
+<!--            class="p-invalid"-->
+<!--            role="alert"-->
+<!--            tabindex="0"-->
+<!--            *ngIf="name.errors?.minlength"-->
+<!--          >-->
+<!--            Devem ser digitados ao menos 3 caracteres.-->
+<!--          </small>-->
+<!--        </ng-container>-->
+<!--      </div>-->
+<!--      <div class="p-field p-text-right">-->
+<!--        <button-->
+<!--          type="submit"-->
+<!--          pButton-->
+<!--          class="p-mr-1"-->
+<!--          [attr.aria-label]="'Pesquisar clientes pelo nome informado'"-->
+<!--          [disabled]="!pesquisaForm.form.valid"-->
+<!--          label="Pesquisar"-->
+<!--        ></button>-->
+
+<!--        <button-->
+<!--          pButton-->
+<!--          (click)="voltar()"-->
+<!--          type="button"-->
+<!--          [attr.aria-label]="'Voltar para a página inicial'"-->
+<!--          class="p-button-raised p-button-text p-button-plain"-->
+<!--          label="Voltar"-->
+<!--        ></button>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </form>-->
+
+<!--  <p-table-->
+<!--    [value]="dataSource"-->
+<!--    styleClass="p-datatable-sm"-->
+<!--    sortMode="multiple"-->
+<!--    [paginator]="true"-->
+<!--    [rows]="10"-->
+<!--    [showCurrentPageReport]="true"-->
+<!--    [rowsPerPageOptions]="[10, 25, 50]"-->
+<!--    selectionMode="single"-->
+<!--    (onRowSelect)="contextualizar($event)"-->
+<!--  >-->
+<!--    <ng-template pTemplate="caption">-->
+<!--      <span-->
+<!--        [attr.aria-label]="-->
+<!--          'Resultados da pesquisa de clientes. Foram encontrados: '.concat(-->
+<!--            dataSource.length + ' clientes.'-->
+<!--          )-->
+<!--        "-->
+<!--      >-->
+<!--        Resultados-->
+<!--      </span>-->
+<!--    </ng-template>-->
+<!--    <ng-template pTemplate="header">-->
+<!--      <tr>-->
+<!--        <th pSortableColumn="dataNascimentoConst">-->
+<!--          Data de Nascimento/Constituição-->
+<!--          <p-sortIcon field="dataNascimentoConst"></p-sortIcon>-->
+<!--        </th>-->
+<!--        <th pSortableColumn="tipoPessoa">-->
+<!--          Tipo de Pessoa-->
+<!--          <p-sortIcon field="tipoPessoa"></p-sortIcon>-->
+<!--        </th>-->
+<!--        <th pSortableColumn="codigoMCI">-->
+<!--          MCI-->
+<!--          <p-sortIcon field="codigoMCI"></p-sortIcon>-->
+<!--        </th>-->
+<!--        <th pSortableColumn="nomeCliente">-->
+<!--          Nome/Razão-->
+<!--          <p-sortIcon field="nomeCliente"></p-sortIcon>-->
+<!--        </th>-->
+<!--        <th pSortableColumn="cpfcnpj">-->
+<!--          CPF/CNPJ-->
+<!--          <p-sortIcon field="cpfcnpj"></p-sortIcon>-->
+<!--        </th>-->
+<!--      </tr>-->
+<!--    </ng-template>-->
+<!--    <ng-template pTemplate="body" let-cliente>-->
+<!--      <tr [pSelectableRow]="cliente">-->
+<!--        <td>{{ cliente.dataNascimentoConst | gawdata }}</td>-->
+<!--        <td>{{ cliente.tipoPessoa === 1 ? 'Física' : 'Jurídica' }}</td>-->
+<!--        <td>{{ cliente.codigoMCI | gawmci }}</td>-->
+<!--        <td>{{ cliente.nomeCliente }}</td>-->
+<!--        <td>-->
+<!--          {{-->
+<!--            cliente.tipoPessoa === 1-->
+<!--              ? (cliente.cpfcnpj | gawcpf)-->
+<!--              : (cliente.cpfcnpj | gawcnpj)-->
+<!--          }}-->
+<!--        </td>-->
+<!--      </tr>-->
+<!--    </ng-template>-->
+<!--  </p-table>-->
+<!--</p-panel>-->

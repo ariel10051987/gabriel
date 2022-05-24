@@ -1,0 +1,130 @@
+<!--<p-panel header="Filtros de Pesquisa">-->
+<!--  <div class="p-fluid p-formgrid p-grid">-->
+<!--    &lt;!&ndash; CAMPO DATA &ndash;&gt;-->
+<!--    <div class="p-field p-col">-->
+<!--      <label for="drpCalendar">Data Cont&aacute;bil: </label>-->
+<!--      <p-calendar-->
+<!--        #calendarData-->
+<!--        [showIcon]="true"-->
+<!--        dateFormat="dd/mm/yy"-->
+<!--        name="ipt-date"-->
+<!--        id="ipt-date"-->
+<!--        [locale]="configCalendarioPtbr"-->
+<!--        [(ngModel)]="form.data"-->
+<!--        appendTo="body"-->
+<!--      >-->
+<!--      </p-calendar>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; COMBO DO TIPO DE EVENTO &ndash;&gt;-->
+<!--    <div class="p-field p-col">-->
+<!--      <label for="drpEvento">Evento: </label>-->
+<!--      <select-->
+<!--        class="col14"-->
+<!--        type="text"-->
+<!--        name="filtroEvento"-->
+<!--        id="filtroEvento"-->
+<!--        data-ng-model="vm.filtros.evento"-->
+<!--        data-ng-change="controller.limparResultado()"-->
+<!--      >-->
+<!--        <option value="0">Todos</option>-->
+<!--        <option value="1002">1002 - Oferta P&uacute;blica</option>-->
+<!--        <option value="1010">1010 - Amortiza&ccedil;&atilde;o</option>-->
+<!--        <option value="1012">1012 - Resgate</option>-->
+<!--        <option value="1052">1052 - Termo</option>-->
+<!--        <option value="1060">1060 - Pagamento de Juros</option>-->
+<!--      </select>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; COMBO DO TIPO DE MENSAGEM &ndash;&gt;-->
+<!--    <div class="p-field p-col">-->
+<!--      <label for="drpGrupo">Grupo: </label>-->
+<!--      <select-->
+<!--        class="col14"-->
+<!--        type="text"-->
+<!--        name="filtroGrupo"-->
+<!--        id="filtroGrupo"-->
+<!--        data-ng-model="filtros.grupo"-->
+<!--        data-ng-change="controller.limparResultado()"-->
+<!--      >-->
+<!--        <option value="SEL1611">SEL1611</option>-->
+<!--      </select>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; COMBO DO ESTADO DA MENSAGEM &ndash;&gt;-->
+<!--    <div class="p-field p-col">-->
+<!--      <label for="drpEstado">Estado: </label>-->
+<!--      <select-->
+<!--        class="col14"-->
+<!--        type="text"-->
+<!--        name="filtroEstado"-->
+<!--        id="filtroEstado"-->
+<!--        data-ng-model="vm.filtros.estado"-->
+<!--        data-ng-change="controller.limparResultado()"-->
+<!--      >-->
+<!--        <option value="">Selecione</option>-->
+<!--        <option value="1">1 - Inclu&iacute;do</option>-->
+<!--        <option value="2">2 - Processado</option>-->
+<!--        <option value="3">3 - Recusado</option>-->
+<!--        <option value="5">-->
+<!--          5 - Processado sem Contabiliza&ccedil;&atilde;o-->
+<!--        </option>-->
+<!--        <option value="9">9 - Cancelado</option>-->
+<!--      </select>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; CONFIGURÃO DOS BOTÕES &ndash;&gt;-->
+<!--    <div name="config-botao" class="p-grid">-->
+<!--      &lt;!&ndash; BOTÃO PARA LIMPAR OS OBJETOS &ndash;&gt;-->
+<!--      <div class="p-field p-col" style="float: right">-->
+<!--        <p-button class="aRight" type="button" name="botaoLimpar">-->
+<!--          Limpar-->
+<!--        </p-button>-->
+<!--      </div>-->
+<!--      &lt;!&ndash;<button bbButton kind="secondary">Hello World</button>&ndash;&gt;-->
+<!--      &lt;!&ndash; BOTÃO PARA PESQUISAR AS MENSAGENS &ndash;&gt;-->
+<!--      <div class="p-field p-col" style="float: right">-->
+<!--        <p-button-->
+<!--          class="aRight"-->
+<!--          type="button"-->
+<!--          name="botaoPesquisar"-->
+<!--          (onClick)="pesquisar()"-->
+<!--        >-->
+<!--          Pesquisar-->
+<!--        </p-button>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</p-panel>-->
+
+<!--&lt;!&ndash; TABELA PARA EXIBIÇÃO DO RESULTADO DA PESQUISA &ndash;&gt;-->
+<!--<p-panel header="Mensagens de Eventos de Carteira">-->
+<!--  <div>-->
+<!--    <p-table responsiveLayout="scroll">-->
+<!--      <ng-template pTemplate="header">-->
+<!--        <tr>-->
+<!--          <th>Identificador</th>-->
+<!--          <th>Situa&ccedil;&atilde;o Cust&oacute;dia</th>-->
+<!--          <th>Data Cont&aacute;bil</th>-->
+<!--          <th>Tipo de Evento</th>-->
+<!--          <th>Estado</th>-->
+<!--          <th>Valor Financeiro</th>-->
+<!--          <th>Quantidade</th>-->
+<!--          <th>A&ccedil;&atilde;o</th>-->
+<!--        </tr>-->
+<!--      </ng-template>-->
+<!--      <ng-template pTemplate="body" let-resposta>-->
+<!--        <tr>-->
+<!--          <th>STR20210217033010536</th>-->
+<!--          <th>ATU</th>-->
+<!--          <th>25.01.2019</th>-->
+<!--          <th>1052-Termo</th>-->
+<!--          <th>Processado</th>-->
+<!--          <th>7.544,48</th>-->
+<!--          <th>8</th>-->
+<!--          <th></th>-->
+<!--        </tr>-->
+<!--      </ng-template>-->
+<!--    </p-table>-->
+<!--  </div>-->
+<!--</p-panel>-->

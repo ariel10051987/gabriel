@@ -1,0 +1,18 @@
+.cabecalho {
+  background-color: #005aa5;
+  color: white;
+}
+
+.logo-bb {
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: #ffed00;
+}
+
+:host ::ng-deep .p-dropdown {
+  width: 14rem;
+}
+
+.rounded {
+  border-radius: 15%;
+}

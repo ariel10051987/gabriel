@@ -1,0 +1,86 @@
+<bb-card>
+  <bb-card-header>simple</bb-card-header>
+
+  <bb-card-body>
+    <div class="d-flex flex-column align-items-center mx-1">
+      <button bbButton size="regular">regular</button>
+      <span class="mt-3 mb-3">regular</span>
+    </div>
+
+    <table bb-table [dataSource]="dataSource" mode="compact" class="mb-0">
+      <ng-container bbColumnDef="codigoTitulo">
+        <th bbHeaderCell *bbHeaderCellDef>Titulo</th>
+        <td bbCell *bbCellDef="let element">
+          {{ element.codigoTitulo }}
+        </td>
+      </ng-container>
+      <ng-container bbColumnDef="textoInstrumentoFinanceiro">
+        <th bbHeaderCell *bbHeaderCellDef>Sigla</th>
+        <td bbCell *bbCellDef="let element">
+          {{ element.textoInstrumentoFinanceiro }}
+        </td>
+      </ng-container>
+      <ng-container bbColumnDef="codigoTituloSistemaCustodia">
+        <th bbHeaderCell *bbHeaderCellDef>Tit Sistema Custódia</th>
+        <td bbCell *bbCellDef="let element">
+          {{ element.codigoTituloSistemaCustodia }}
+        </td>
+      </ng-container>
+      <ng-container bbColumnDef="dataVencimentoTitulo">
+        <th bbHeaderCell *bbHeaderCellDef>Vencimento</th>
+        <td bbCell *bbCellDef="let element">
+          {{ element.dataVencimentoTitulo | gawdata }}
+        </td>
+      </ng-container>
+      <ng-container bbColumnDef="valorPu">
+        <th bbHeaderCell *bbHeaderCellDef>Preço Unitário</th>
+        <td bbCell *bbCellDef="let element">
+          {{ element.valorPu | currency: 'BRL':true }}
+        </td>
+      </ng-container>
+      <ng-container bbColumnDef="dataPu">
+        <th bbHeaderCell *bbHeaderCellDef>Data PU</th>
+        <td bbCell *bbCellDef="let element">
+          {{ dataPu | gawdata }}
+        </td>
+      </ng-container>
+      <ng-container bbColumnDef="textoTipoPu">
+        <th bbHeaderCell *bbHeaderCellDef>Tipo PU</th>
+        <td bbCell *bbCellDef="let element">
+          {{ element.textoTipoPu }}
+        </td>
+      </ng-container>
+      <ng-container bbColumnDef="textoEstadoPu">
+        <th bbHeaderCell *bbHeaderCellDef>Situação</th>
+        <td bbCell *bbCellDef="let element">
+          {{ element.textoEstadoPu }}
+        </td>
+      </ng-container>
+      <ng-container bbColumnDef="acao">
+        <th bbHeaderCell *bbHeaderCellDef></th>
+        <td bbCell *bbCellDef="let element">
+          <button
+            bbButton
+            class="bb-button bb-icon-button default size-regular"
+          >
+            <bb-icon pack="bbds-ui" icon="edit"></bb-icon>
+          </button>
+          <button
+            bbButton
+            class="bb-button bb-icon-button default size-regular p-ml-3"
+          >
+            <bb-icon pack="bbds-ui" icon="delete"></bb-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <thead>
+        <tr bb-header-row *bbHeaderRowDef="colunas"></tr>
+      </thead>
+
+      <tbody>
+        <tr bb-row *bbRowDef="let row; columns: colunas"></tr>
+      </tbody>
+    </table>
+  </bb-card-body>
+</bb-card>

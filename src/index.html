@@ -1,0 +1,75 @@
+<!--
+Para iniciar a aplicação na área transacional da Plataforma através do console JavaScript, insira o seguinte comando no navegador (F12 -> console):
+
+iniciarAplicacaoNaAreaTransacional({
+  "nome"       : "omm-lqdc",
+  "urlInicial" : "/estatico/omm-lqdc/"
+});
+
+Para demais orientações consulte o arquivo README.md na raiz do projeto.
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <title>omm-lqdc</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link id="gaw-theme" rel="stylesheet" href="" />
+
+    <!-- RFC - Configuração da DLS do BB - Início -->
+    <link
+      rel="stylesheet"
+      href="https://plataforma.desenv.bb.com.br/estatico/dls-cdn/angular/latest/1/bb-corporativo/bb-corporativo.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://plataforma.desenv.bb.com.br/estatico/dls-cdn/fonts/styles/banco-do-brasil.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://plataforma.desenv.bb.com.br/estatico/dls-cdn/icons/styles/all.min.css"
+    />
+    <!-- RFC - Configuração da DLS do BB - Fim -->
+
+    <!-- prettier-ignore -->
+    <style type="text/css">
+      /* Loading spinner */
+      .app-loading{position:relative;display:flex;flex-direction:column;align-items:center;
+      justify-content:center;height:100vh}.app-loading .spinner{height:140px;width:140px;
+      animation:rotate 2s linear infinite;transform-origin:center center;position:absolute;
+      top:0;bottom:0;left:0;right:0;margin:auto}.app-loading .spinner .path{stroke-dasharray:1,200;
+      stroke-dashoffset:0;animation:dash 1.5s ease-in-out infinite;stroke-linecap:round;stroke:#ddd
+      }@keyframes rotate{100%{transform:rotate(360deg)}}@keyframes dash{0%{stroke-dasharray:1,200;
+      stroke-dashoffset:0}50%{stroke-dasharray:89,200;stroke-dashoffset:-35px}100%{stroke-dasharray:
+      89,200;stroke-dashoffset:-124px}}
+    </style>
+    <script>
+      var PltConfig = {
+        APIPath: '/omm-api/v3/api',
+        staticPath: '/omm-lqdc'
+      };
+    </script>
+  </head>
+  <body>
+    <omm-app-root>
+      <!-- Loading spinner -->
+      <div class="app-loading">
+        <div class="logo"></div>
+        <svg class="spinner" viewBox="25 25 50 50">
+          <circle
+            class="path"
+            cx="50"
+            cy="50"
+            r="20"
+            fill="none"
+            stroke-width="2"
+            stroke-miterlimit="10"
+          />
+        </svg>
+      </div>
+    </omm-app-root>
+  </body>
+</html>

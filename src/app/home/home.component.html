@@ -1,0 +1,160 @@
+<div id="home-wrapper">
+  <div class="p-grid">
+    <!-- Resources -->
+    <div class="p-col-12">
+      <p-panel header="Recursos">
+        <p>
+          Aqui estão alguns links para ajudar você no desenvolvimento da sua
+          aplicação:
+        </p>
+        <div class="p-d-flex p-justify-around p-flex-wrap">
+          <a
+            *ngFor="let r of resources"
+            [attr.href]="r.url"
+            [attr.aria-label]="r.desc"
+            class="p-d-flex p-align-center p-mb-3"
+            [ngClass]="{ 'dark-anchor': darkThemeSelected }"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img [attr.src]="r.icon" [attr.alt]="r.desc" />
+            <span class="p-px-1" role="text">{{ r.desc }}</span>
+            <i class="pi pi-chevron-right"></i>
+          </a>
+        </div>
+      </p-panel>
+    </div>
+
+    <!-- Next Steps -->
+    <div class="p-col-12">
+      <p-panel header="Recursos">
+        <p>Próximos Passos</p>
+
+        <div class="p-d-flex p-justify-around p-mb-3 p-flex-wrap">
+          <button
+            pButton
+            (click)="selection.value = 'component'"
+            class="p-button-raised p-button-text p-button-sm"
+            icon="pi pi-plus"
+            iconPos="left"
+            label="Novo componente"
+            [attr.aria-label]="
+              'Para criar um novo componente você deve executar o comando do Angular CLI: NG generate component nome do componente --project nome do projeto'
+            "
+          ></button>
+
+          <button
+            pButton
+            (click)="selection.value = 'dependency'"
+            class="p-button-raised p-button-text p-button-sm"
+            icon="pi pi-plus"
+            iconPos="left"
+            label="Adicionar dependência"
+            [attr.aria-label]="
+              'Para adicionar uma dependência você deve executar o comando do Angular CLI: NG add nome da dependência'
+            "
+          ></button>
+
+          <button
+            pButton
+            (click)="selection.value = 'test'"
+            class="p-button-raised p-button-text p-button-sm"
+            icon="pi pi-plus"
+            iconPos="left"
+            label="Rodar e observar os testes"
+            [attr.aria-label]="
+              'Para executar e observar os testes você deve executar o comando do N P M: NPM test'
+            "
+          ></button>
+
+          <button
+            pButton
+            (click)="selection.value = 'build'"
+            class="p-button-raised p-button-text p-button-sm"
+            icon="pi pi-plus"
+            iconPos="left"
+            label="Construir para Produção"
+            [attr.aria-label]="
+              'Para construir a aplicação para produção você deve executar o comando do NPM: NPM run build'
+            "
+          ></button>
+        </div>
+
+        <!-- Terminal -->
+        <div class="terminal" [ngSwitch]="selection.value" aria-hidden="true">
+          <pre *ngSwitchDefault>ng generate component xyz --project bar</pre>
+          <pre *ngSwitchCase="'dependency'">ng add _____</pre>
+          <pre *ngSwitchCase="'test'">npm test</pre>
+          <pre *ngSwitchCase="'build'">npm run build</pre>
+        </div>
+
+        <input type="hidden" #selection />
+      </p-panel>
+    </div>
+
+    <!-- Examples -->
+    <div class="p-col-12">
+      <p-panel header="Exemplos">
+        <p>Veja um exemplo de uma implementação.</p>
+        <button
+          pButton
+          class="p-mb-3"
+          label="Pesquisar Clientes"
+          routerLink="/pesquisa-cliente"
+        ></button>
+      </p-panel>
+    </div>
+
+    <!-- Links -->
+    <div class="p-col-12">
+      <div class="p-d-flex p-justify-center">
+        <a
+          class="circle-link"
+          title="Angular 10"
+          href="https://angular.io/"
+          target="_blank"
+          [attr.aria-label]="'Documentação do Angular'"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="assets/angular.svg"
+            class="w-50"
+            alt="Logotipo do Angular"
+          />
+        </a>
+
+        <a
+          class="circle-link"
+          title="Angular CLI"
+          href="https://angular.io/cli"
+          target="_blank"
+          [attr.aria-label]="'Documentação do Angular CLI'"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="assets/angular-cli.svg"
+            class="w-50"
+            alt="Logotipo do Angular CLI"
+          />
+        </a>
+
+        <a
+          class="circle-link text-decoration-none"
+          title="PrimeNG"
+          href="https://www.primefaces.org/primeng/showcase"
+          target="_blank"
+          [attr.aria-label]="
+            'Documentação da biblioteca de componentes PrimeNG'
+          "
+          rel="noopener noreferrer"
+        >
+          <img
+            src="assets/primeng.svg"
+            class="w-50"
+            alt="Logotipo da biblioteca de componentes PrimeNG"
+          />
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
